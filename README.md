@@ -5,7 +5,7 @@ Repository for an assignment from study
 Role:
 
 1. Sean dan Farrel 
-   Buat:
+   #Buat:
     Account Function
     <INI ADALAH MAIN CLASS>
     - Create Account
@@ -14,7 +14,7 @@ Role:
     "Sementara itu dulu"
 
 2. Andres and Luis
-   Buat:
+   #Buat:
    <INHERITANCE> 
     ATM Function part 1
     - Withdrawl / Deposit
@@ -22,8 +22,8 @@ Role:
     - Authentication
     "Sementara itu dulu"
 
-3. ? ? ?
-   Buat:
+3. Chrys " ?" " ?"
+   #Buat:
    <INHERITANCE>
    ATM Function part 2
    - Send Money
