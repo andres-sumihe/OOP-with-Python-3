@@ -3,21 +3,6 @@ from os import system
 
 
 #Class
-<<<<<<< HEAD
-class Account:
-    def __init__(self, ):
-        self.nama = ""
-        self.bank = {}
-        print("Welcome To Bank Bang")
-        
-    def contoh(self):
-        self.nama = input("Masukan nama: ")
-        print("Nama anda : ",self.nama)
-
-
-s = Account()
-s.contoh()
-=======
 class Bank:
     def __init__(self):
         self.data = []
@@ -38,7 +23,6 @@ class Bank:
         print("1. Create Account")
         print("2. Delete Account")
         print("3. Exit")
->>>>>>> 180f6068e04532bdeebfe2df4b9ae9fe5f960a87
     
 
 s = Bank()
