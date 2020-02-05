@@ -17,7 +17,7 @@ class Bank:
             print("\n Insufficient balance  ")
 
     def display(self):
-        print("\n Net Available Balance=", self.balance)
+        print("\n Net Available Balance= ", self.balance)
 
 s = Bank()
 s.deposit()
