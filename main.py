@@ -1,16 +1,18 @@
 import math
 
+
 #Class
-class Account():
+class Account:
     def __init__self(self):
-
+        self.nama = nama
+        print("Hello")
+        
+    def contoh(self):
+        nama = input("Masukan nama: ")
+        print("Nama anda : ",nama)
+s = Account()
+s.contoh()
     
-class ATM(Account):
-    def __init__self(self):
-
-class ATM_2(Account):
-    def __init__self(self):
-
 
 #Inheritance
 
