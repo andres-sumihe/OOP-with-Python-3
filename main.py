@@ -200,7 +200,67 @@ s = online_payment()
 s.menu_online_payment()
 s.summon_online_payment()
 
+class send_money:   
+    def __init__(self):
+        print("=========================================")
+        print("|       Welcome to Send Money           |")
+        print("=========================================")
+    def menu_send_money(self):
+        print("1. Transfer Antar rekening")
+        print("2. Transfer Virtual Account")
+        print("3. Exit")
+        print("=========================================")
+        
+        
+    def menu_tranfer_rekening(self):
+        int(input("Masukan rekening tujuan anda : "))
+        int(input("masukan Nominal yang akan di transfer: "))
+        print("\nberhasil transfer! ")
+        print("\nsisa saldo anda : ")
 
+        
+    def menu_virtual_acc(self):
+        int(input("Masukan No.Virtual Account yang di tuju : "))
+        int(input("Masukan Nominal yang akan di transfer : "))
+        print("\nberhasil transfer! ")
+        print("\nsisa saldo anda : ")
+        print("\ningin melakukan transaksi?")
+        print("\nYa atau tidak?")
+        
+        
+        
+    def summon_send_money(self):
+        choice_send_money = int(input("Input Your Choice : "))
+        while True:
+            if choice_send_money == 1:
+                s.menu_tranfer_rekening()
+                choice2 = str(input("ingin melakukan transaksi lagi? Y/N "))
+                if choice2 == 'y' or choice2 == 'Y':
+                    pass
+                else :
+                    s.menu_send_money()
+                    break
+            elif choice_send_money == 2 :
+                s.menu_virtual_acc()
+                choice3 = str(input("ingin melakukan transaksi lagi? Y/N "))
+                if choice3 == 'y' or choice3 == 'Y':
+                    pass
+                else :
+                    s.menu_send_money()
+                    break
+            elif choice_send_money == 3 :
+                print("Thank Your, Have A Nice Day :)")
+                break
+            else:
+                print("enter the correct input")
+                s.summon_send_money()
+                break
+
+        
+    
+s = send_money()
+s.menu_send_money()
+s.summon_send_money()
 
 #Inheritance
 
