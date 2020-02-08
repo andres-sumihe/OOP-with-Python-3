@@ -6,17 +6,13 @@ from os import system
 
 
 class Account:
-    class_list = {}
-    int
-    a = 1
-    int
-    b = 2
-    int
-    c = 3
+    
     def __init__(self):
         print("=========================================")
         print("|       Welcome to Bank GankBank        |")
         print("=========================================")
+        self.class_list = {}
+        self.data = []
 
     def menu(self):
         print("1. Sign up")
@@ -26,22 +22,21 @@ class Account:
 
     def create_account(self):
         print("=========================================")
-        print("|        Sign up an new account         |")
+        print("|        Sign up a new account         |")
         print("=========================================")
         self.__Name = input("Input your name : ")
         self.__AccNum = input("Input Your Account Number : ")
         self.__Pin  = input("Input Your PIN : ")
         self.__ammount = float(input("Input your first deposite (min: $100) : "))
 
-
-        Account.class_list[Account.a] = self.__AccNum  # Pake ini ga bisa simpan value lebih dari satu
-        Account.class_list[Account.b] = self.__Pin     # artinya gak bisa bikin 2 akun
-        Account.class_list[Account.c] = self.__ammount # gmna dong ? :(
+        self.data.append(self.__Name)
+        self.data.append(self.__AccNum)
+        self.data.append(self.__ammount)
+        self.class_list[self.__Pin] = self.data
         print("=========================================")
         print("Your Account Has Been Create")
-        print(Account.class_list[Account.a])
-        for i in Account.class_list[Account.a]:
-            print(i)
+        print(self.class_list)
+
         
     def login(self):
         print("=========================================")
@@ -50,12 +45,6 @@ class Account:
 
         InAccNum = input("Input Your Account Number : ")
         InputPin = input("Input Your PIN :")
-        for i in Account.class_list[Account.b]:
-            print(i)  #gw cuma test valuenya apa,
-            # if InputPin == Account.class_list[Account.b][i] and InAccNum == Account.class_list[Account.a][i]:
-            #     print("Success")
-            # else:
-            #     print("Failed")
 
     def summon(self):
         s = Account()
@@ -71,7 +60,9 @@ class Account:
             else:
                 print("Thank Your, Have A Nice Day :)")
 
-
+s = Account()
+while True:
+    s.create_account()
 
 class ATM(Account):
     def __init__(self):
