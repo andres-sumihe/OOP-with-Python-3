@@ -83,8 +83,6 @@ class ATM(Account):
         print("You withdraw: " + str(withdraw)+ "Success")
 
 
-
-
 s = Account()
 
 while True:
