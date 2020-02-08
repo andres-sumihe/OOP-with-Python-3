@@ -74,35 +74,46 @@ class Account:
 
 
 class ATM(Account):
-    def __init__(self, withdraw):
-        self.withdraw = 0
+    def __init__(self):
+        self.balance = 0
+        print("Hello!!! Welcome to the Deposit & Withdrawal Machine")
 
-    def makeWithdraw(self):
-        withdraw = float(input("Input Ammount for withdraw: "))
-        Account.class_list[Account.c]-= withdraw
-        print("You withdraw: " + str(withdraw)+ "Success")
+    def deposit(self):
+        amount = float(input("Enter amount to be Deposited: "))
+        self.balance += amount
+        print("\n Amount Deposited:", amount)
+
+    def withdraw(self):
+        amount = float(input("Enter amount to be Withdrawn: "))
+        if self.balance >= amount:
+            self.balance -= amount
+            print("\n You Withdrew:", amount)
+        else:
+            print("\n Insufficient balance  ")
+
+    def display(self):
+        print("\n Net Available Balance= ", self.balance)
+
+# s = Account()
+
+# while True:
+#     s.menu()
+#     choice = int(input("Input Your Choice : "))
+#     if choice == 1 :
+#         s.create_account()
+#         choice3 = str(input("Press Y to go to Menu : "))
+#         if choice3 == 'y' or choice3 == 'Y':
+#             pass
+
+#     elif choice == 2 :
+#         s.login()
+#         pass
+#     elif choice == 3 :
+#         print("Thank Your, Have A Nice Day :)")  
+#         break
 
 
-s = Account()
-
-while True:
-    s.menu()
-    choice = int(input("Input Your Choice : "))
-    if choice == 1 :
-        s.create_account()
-        choice3 = str(input("Press Y to go to Menu : "))
-        if choice3 == 'y' or choice3 == 'Y':
-            pass
-
-    elif choice == 2 :
-        s.login()
-        pass
-    elif choice == 3 :
-        print("Thank Your, Have A Nice Day :)")  
-        break
-
-
-class online_payment:
+class online_payment(Account):
     def __init__(self):
         print("=========================================")
         print("|       Welcome to Online Payment       |")
@@ -131,7 +142,7 @@ class online_payment:
         print("=========================================")
     
     def menu_pulsa(self):
-        s.pulsa()
+        self.pulsa()
         choise_pulsa = int(input("\nInput Your Choice : "))
         while True:
             if choise_pulsa == 1:
@@ -165,11 +176,11 @@ class online_payment:
                 int(input("Input Your Choice: "))
                 break
             else :
-                s.menu_pulsa()
+                self.menu_pulsa()
                 break
             
     def menu_token_listrik(self):
-        s.token_listrik()
+        self.token_listrik()
         int(input("Enter your Token number: "))
         print("Select the credit you want to buy: ")
         print("1. Rp.20,000 \n2. Rp.50,000 \n3. Rp.100,000 \n4. Rp.150,000 \n5. Rp.200,000 ")
@@ -181,24 +192,24 @@ class online_payment:
         choice_online_payment = int(input("Input Your Choice : "))
         while True:
             if choice_online_payment == 1:
-                s.menu_pulsa()
+                self.menu_pulsa()
                 break
             elif choice_online_payment == 2 :
-                s.menu_token_listrik()
+                self.menu_token_listrik()
                 break
             elif choice_online_payment == 3 :
                 print("Thank Your, Have A Nice Day :)")
                 break
             else:
                 print("enter the correct input")
-                s.summon_online_payment()
+                self.summon_online_payment()
                 break
 
-s = online_payment()  
-s.menu_online_payment()
-s.summon_online_payment()
+# s = online_payment()  
+# s.menu_online_payment()
+# s.summon_online_payment()
 
-class send_money:   
+class send_money(Account):   
     def __init__(self):
         print("=========================================")
         print("|       Welcome to Send Money           |")
@@ -231,62 +242,36 @@ class send_money:
         choice_send_money = int(input("Input Your Choice : "))
         while True:
             if choice_send_money == 1:
-                s.menu_tranfer_rekening()
+                self.menu_tranfer_rekening()
                 choice2 = str(input("ingin melakukan transaksi lagi? Y/N "))
                 if choice2 == 'y' or choice2 == 'Y':
                     pass
                 else :
-                    s.menu_send_money()
+                    self.menu_send_money()
                     break
             elif choice_send_money == 2 :
-                s.menu_virtual_acc()
+                self.menu_virtual_acc()
                 choice3 = str(input("ingin melakukan transaksi lagi? Y/N "))
                 if choice3 == 'y' or choice3 == 'Y':
                     pass
                 else :
-                    s.menu_send_money()
+                    self.menu_send_money()
                     break
             elif choice_send_money == 3 :
                 print("Thank Your, Have A Nice Day :)")
                 break
             else:
                 print("enter the correct input")
-                s.summon_send_money()
+                self.summon_send_money()
                 break
 
         
     
-s = send_money()
-s.menu_send_money()
-s.summon_send_money()
-
+# s = send_money()
+# s.menu_send_money()
+# s.summon_send_money()
 #Inheritance
 
-class atm(Account):
-    def __init__(self):
-        self.balance = 0
-        print("Hello!!! Welcome to the Deposit & Withdrawal Machine")
-
-    def deposit(self):
-        amount = float(input("Enter amount to be Deposited: "))
-        self.balance += amount
-        print("\n Amount Deposited:", amount)
-
-    def withdraw(self):
-        amount = float(input("Enter amount to be Withdrawn: "))
-        if self.balance >= amount:
-            self.balance -= amount
-            print("\n You Withdrew:", amount)
-        else:
-            print("\n Insufficient balance  ")
-
-    def display(self):
-        print("\n Net Available Balance= ", self.balance)
-
-s = atm()
-s.deposit()
-s.withdraw()
-s.display()
 
 #Polymorphism
 
