@@ -13,6 +13,7 @@ class Account:
         print("=========================================")
         self.class_list = {}
         self.data = []
+        self.temp = []
 
     def menu(self):
         print("1. Sign up")
@@ -32,7 +33,24 @@ class Account:
         self.data.append(self.__Name)
         self.data.append(self.__AccNum)
         self.data.append(self.__ammount)
-        self.class_list[self.__Pin] = self.data
+        self.class_list[self.__Pin] = [self.__Name,self.__AccNum,self.__ammount] # This will create new key and new value
+        print(self.class_list)                                                   # ==========================================
+                                                                                 # So use your brain MTFK, Stop wasting time 
+                                                                                 # and do your jobs MTFK
+                                                                                 # Im to tired to handle all of your mess guys
+                                                                                 # So please Understand me MTFK
+                                                                                 # I can do this alone if i want, but how about
+                                                                                 # team work? are you useless guys ?
+                                                                                 # if you feel stupid or can't do something about
+                                                                                 # programming, just start to learn more
+                                                                                 # 
+                                                                                 # Overall, Good Job Team :)
+                                                                                 # Thanks for your participant :)
+                                                                                 # if i make you guys upset, you can take this project
+                                                                                 # i wont take, i will out from this team,
+                                                                                 # im not kidding btw, hehe,
+                                                                                 # im telling you what i have to tell
+
         print("=========================================")
         print("Your Account Has Been Create")
         print(self.class_list)
