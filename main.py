@@ -1,12 +1,11 @@
 import math
 from os import system
-
-
-#Class
-
+from collections import defaultdict
 
 class Account:
-    
+    '''
+        MAIN CLASS
+    '''
     def __init__(self):
         print("=========================================")
         print("|       Welcome to Bank GankBank        |")
@@ -103,24 +102,6 @@ class ATM(Account):
     def display(self):
         print("\n Net Available Balance= ", self.balance)
 
-# s = Account()
-
-# while True:
-#     s.menu()
-#     choice = int(input("Input Your Choice : "))
-#     if choice == 1 :
-#         s.create_account()
-#         choice3 = str(input("Press Y to go to Menu : "))
-#         if choice3 == 'y' or choice3 == 'Y':
-#             pass
-
-#     elif choice == 2 :
-#         s.login()
-#         pass
-#     elif choice == 3 :
-#         print("Thank Your, Have A Nice Day :)")  
-#         break
-
 
 class online_payment(Account):
     def __init__(self):
@@ -214,10 +195,6 @@ class online_payment(Account):
                 self.summon_online_payment()
                 break
 
-# s = online_payment()  
-# s.menu_online_payment()
-# s.summon_online_payment()
-
 class send_money(Account):   
     def __init__(self):
         print("=========================================")
@@ -273,22 +250,3 @@ class send_money(Account):
                 print("enter the correct input")
                 self.summon_send_money()
                 break
-
-        
-    
-# s = send_money()
-# s.menu_send_money()
-# s.summon_send_money()
-#Inheritance
-
-
-#Polymorphism
-
-
-#Abstraction
-
-
-#Encapsulation
-
-
-#put your code here MTFK
