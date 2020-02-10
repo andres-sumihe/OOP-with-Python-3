@@ -557,32 +557,46 @@ class online_payment(Account):
                 self.summon_online_payment()
                 break
 
+
+
 class send_money(Account):   
     def __init__(self):
         print("=========================================")
         print("|       Welcome to Send Money           |")
         print("=========================================")
     def menu_send_money(self):
-        print("1. Transfer Antar rekening")
-        print("2. Transfer Virtual Account")
+        print("1. Transfers between accounts")
+        print("2. Transfers Virtual Account")
         print("3. Exit")
         print("=========================================")
         
         
     def menu_tranfer_rekening(self):
-        int(input("Masukan rekening tujuan anda : "))
-        int(input("masukan Nominal yang akan di transfer: "))
-        print("\nberhasil transfer! ")
-        print("\nsisa saldo anda : ")
+        int(input("Input destination account: "))
+        trans = int(input("Input Nominal to be transferred : "))
+        while True:
+            if self.amount >= trans :
+               transfer_rek = self.amount - trans
+               print("\nSuccessful! ")
+               print("\nYour Balance : ",transfer_rek)
+               break
+            else :
+                print("Your balance is not enough!!")
+                break
 
         
     def menu_virtual_acc(self):
-        int(input("Masukan No.Virtual Account yang di tuju : "))
-        int(input("Masukan Nominal yang akan di transfer : "))
-        print("\nberhasil transfer! ")
-        print("\nsisa saldo anda : ")
-        print("\ningin melakukan transaksi?")
-        print("\nYa atau tidak?")
+        int(input("Input destination Virtual Account  : "))
+        trans = int(input("Input Nominal to be transferred : "))
+        while True:
+            if self.amount >= trans :
+               transfer_rek = self.amount - trans
+               print("\nSuccessful! ")
+               print("\nYour Balance : ",transfer_rek)
+               break
+            else :
+                print("Your balance is not enough!!")
+                break
         
         
         
