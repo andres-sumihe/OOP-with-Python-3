@@ -1,5 +1,6 @@
 import math
-from os import system
+from os import system, name
+from time import sleep
 from collections import defaultdict
 
 class Account:
@@ -36,12 +37,49 @@ class Account:
         self.class_list[self.__Pin] = [self.__Name,self.__AccNum,self.__ammount]                                                    
         print("=========================================")
         print("Your Account Has Been Create")
+    
+    def clear(): 
+        sleep(2)
+        if name == 'nt': 
+            _ = system('cls') 
+        else: 
+            _ = system('clear')
         
+
+
+
+class ATM(Account):
+    def __init__(self):
+        self.balance = 0
+        print("Hello!!! Welcome to the Deposit & Withdrawal Machine")
+    
+    def summon(self):
+        self.menu()
+        choice = int(input("Input Your Choice : "))
+        while True:
+            if choice is 1:
+                self.create_account()
+                break
+            elif choice is 2 :
+                self.login()
+                self.menuATM()
+                
+            else:
+                print("Thank Your, Have A Nice Day :)")
+    def menuATM(self):
+        print("=========================================")
+        print("|                  Menu                 |")
+        print("=========================================")
+        print("1. Withdraw")
+        print("2. Transfer")
+        print("3. Next Menu")
+        print("=========================================")
+
+
     def login(self):
         print("=========================================")
         print("|         Sign in your account          |")
         print("=========================================")
-
         print(self.class_list)
         InAccNum = input("Input Your Account Number : ")
         InputPin = input("Input Your PIN :")
@@ -49,31 +87,11 @@ class Account:
             if InputPin == i:
                 print("test", i[0])
                 if self.class_list[i[0]][1] == InAccNum:
-                    print("Login")
-    def summon(self):
-        s = Account()
-        s.menu()
-        choice = int(input("Input Your Choice : "))
-        while True:
-            if choice is 1:
-                s.create_account()
-                break
-            elif choice is 2 :
-                s.login()
-                break
-            else:
-                print("Thank Your, Have A Nice Day :)")
-
-s = Account()
-while True:
-    s.summon()
-
-class ATM(Account):
-    def __init__(self):
-        self.balance = 0
-        print("Hello!!! Welcome to the Deposit & Withdrawal Machine")
-
+                    print("Login Success")
+                    a = a.system('cls')
+                    
     def deposit(self):
+        
         amount = float(input("Enter amount to be Deposited: "))
         self.balance += amount
         print("\n Amount Deposited:", amount)
@@ -89,6 +107,10 @@ class ATM(Account):
     def display(self):
         print("\n Net Available Balance= ", self.balance)
 
+
+s = ATM()
+while True:
+    s.summon()
 
 class online_payment(Account):
     def __init__(self):
@@ -130,9 +152,9 @@ class online_payment(Account):
                 ptelkomsel = int(input("Input Your Choice: "))
                 while True:
                     if ptelkomsel == 1:
-                        if self.amount >= 5000 :
+                        if self.__ammount >= 5000 :
                             telkomsel5 = self.amount - 5000
-                            print("Telkomsel credit purchases successful");
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",telkomsel5)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -614,3 +636,5 @@ class send_money(Account):
                 print("enter the correct input")
                 self.summon_send_money()
                 break
+
+
