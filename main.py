@@ -14,6 +14,7 @@ class Account:
         self.class_list
         self.data
         self.temp
+
     def menu(self):
         print("=========================================")
         print("|       Welcome to Bank GankBank        |")
@@ -38,7 +39,7 @@ class Account:
         print("=========================================")
         print("Your Account Has Been Create")
     
-    def clear(): 
+    def clear(self): 
         sleep(2)
         if name == 'nt': 
             _ = system('cls') 
@@ -50,20 +51,17 @@ class Account:
 
 class ATM(Account):
     def __init__(self):
-        self.balance = 0
-        print("Hello!!! Welcome to the Deposit & Withdrawal Machine")
+        print("")
     
     def summon(self):
         self.menu()
         choice = int(input("Input Your Choice : "))
         while True:
-            if choice is 1:
+            if choice == 1:
                 self.create_account()
                 break
-            elif choice is 2 :
+            elif choice == 2:
                 self.login()
-                self.menuATM()
-                
             else:
                 print("Thank Your, Have A Nice Day :)")
     def menuATM(self):
@@ -72,9 +70,34 @@ class ATM(Account):
         print("=========================================")
         print("1. Withdraw")
         print("2. Transfer")
-        print("3. Next Menu")
+        print("3. Check Balance")
+        print("4. Next Menu")
+        print("5. Log Out")
+        print("6. Exit")
         print("=========================================")
+        choice = int(input("Input Your Choice : "))
+        while True:
+            if choice == 1:
+                self.withdraw()
+                break
+            elif choice == 2:
+                self.transfer()
+            elif choice == 3:
+                self.display()
+            elif choice == 4:
+                self.display()
+            elif choice == 5:
+                self.summon()
+            elif choice == 6:
+                self.clear()
+                print("You can access this apps on Github")
+                print("visit github.com/andres-sumihe/OOP-with-python-3")
+                print("Thanks")
+                quit()
 
+            else:
+                print("Please enter valid input")
+        
 
     def login(self):
         print("=========================================")
@@ -87,38 +110,81 @@ class ATM(Account):
             if InputPin == i:
                 print("test", i[0])
                 if self.class_list[i[0]][1] == InAccNum:
+                    # self.temp.append(self.class_list[i[0]][2])
+                    self.temp.append(i[0])
+                    print(self.temp[0])
                     print("Login Success")
-                    a = a.system('cls')
+                    # self.clear()
+                    self.menuATM()
+            else: break
+        else:
+            print("Please Sign up")
+            self.summon()
                     
-    def deposit(self):
-        
+    def transfer(self):
+        reciever = input("Enter destination account number: ")
         amount = float(input("Enter amount to be Deposited: "))
-        self.balance += amount
-        print("\n Amount Deposited:", amount)
-
+        for i in self.class_list:
+            if reciever in self.class_list[i][1]:
+                self.class_list[i][2] += amount
+                self.class_list[self.temp[0]][2] -= amount
+                print(self.class_list[self.temp[0]][2])
+                print("Found")
     def withdraw(self):
         amount = float(input("Enter amount to be Withdrawn: "))
-        if self.balance >= amount:
-            self.balance -= amount
+        if self.class_list[self.temp[0]][2] >= amount:
+            self.class_list[self.temp[0]][2] -= amount
             print("\n You Withdrew:", amount)
         else:
             print("\n Insufficient balance  ")
-
     def display(self):
-        print("\n Net Available Balance= ", self.balance)
+        self.clear()
+        print("\n Net Available Balance= ", self.class_list[self.temp[0]][2])
+        self.menuATM()
 
 
-s = ATM()
-while True:
-    s.summon()
 
-class online_payment(Account):
+class online_payment(ATM):
     def __init__(self):
+        print("")
+    
+    def menuATM(self):
+        print("=========================================")
+        print("|                  Menu                 |")
+        print("=========================================")
+        print("1. Withdraw")
+        print("2. Transfer")
+        print("3. Check Balance")
+        print("4. Next Menu")
+        print("5. Log Out")
+        print("6. Exit")
+        print("=========================================")
+        choice = int(input("Input Your Choice : "))
+        while True:
+            if choice == 1:
+                self.withdraw()
+                break
+            elif choice == 2:
+                self.transfer()
+            elif choice == 3:
+                self.display()
+            elif choice == 4:
+                self.summon_online_payment()
+            elif choice == 5:
+                self.summon()
+            elif choice == 6:
+                self.clear()
+                print("You can access this apps on Github")
+                print("visit github.com/andres-sumihe/OOP-with-python-3")
+                print("Thanks")
+                quit()
+
+            else:
+                print("Please enter valid input")
+    def menu_online_payment(self):
         print("=========================================")
         print("|       Welcome to Online Payment       |")
         print("=========================================")
-        
-    def menu_online_payment(self):
         print("1. Pulsa")
         print("2. Token Listrik")
         print("3. Exit")
@@ -551,6 +617,7 @@ class online_payment(Account):
         
     
     def summon_online_payment(self):
+        self.menu_online_payment()
         choice_online_payment = int(input("Input Your Choice : "))
         while True:
             if choice_online_payment == 1:
@@ -637,4 +704,6 @@ class send_money(Account):
                 self.summon_send_money()
                 break
 
-
+s = online_payment()
+while True:
+    s.summon()
