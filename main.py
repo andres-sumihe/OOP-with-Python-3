@@ -125,6 +125,7 @@ class online_payment(Account):
         print("3. IM3")
         print("4. AXIS")
         print("5. TRI")
+        print("6. Back")
         
     def token_listrik(self):
         print("\n=========================================")
@@ -133,34 +134,70 @@ class online_payment(Account):
     
     def menu_pulsa(self):
         self.pulsa()
-        choise_pulsa = int(input("\nInput Your Choice : "))
+        choise_pulsa = int(input("Input Your Choice : "))
         while True:
             if choise_pulsa == 1:
                 int(input("TELKOMSEL \nEnter your mobile number: "))
                 print("Select the credit you want to buy: ")
-                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000")
+                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000 \n6. Back")
                 ptelkomsel = int(input("Input Your Choice: "))
                 while True:
                     if ptelkomsel == 1:
-                        telkomsel5 = s.amount - 5000
-                        print("Telkomsel credit purchases successful");
-                        print("Your remaining balance is ",telkomsel5)
+                        if s.amount >= 5000 :
+                            telkomsel5 = s.amount - 5000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",telkomsel5)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            online_payment()
+                            s.menu_online_payment()
+                            s.summon_online_payment()
                         break
                     elif ptelkomsel == 2:
-                        print("Telkomsel credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 10000 :
+                            telkomsel10 = s.amount - 10000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",telkomsel10)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif ptelkomsel == 3:
-                        print("Telkomsel credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 20000 :
+                            telkomsel20 = s.amount - 20000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",telkomsel20)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif ptelkomsel == 4:
-                        print("Telkomsel credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 50000 :
+                            telkomsel50 = s.amount - 50000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",telkomsel50)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif ptelkomsel == 5:
-                        print("Telkomsel credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 100000 :
+                            telkomsel100 = s.amount - 100000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",telkomsel100)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
+                        break
+                    elif ptelkomsel == 6:
+                        s.pulsa()
+                        s.menu_pulsa()
+                        break
                     else :
                         print("enter the correct input")
                         self.menu_pulsa() 
@@ -168,28 +205,63 @@ class online_payment(Account):
             elif choise_pulsa == 2:
                 int(input("XL \nEnter your mobile number: "))
                 print("Select the credit you want to buy: ")
-                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000")
+                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000 \n6. Back")
                 pxl = int(input("Input Your Choice: "))
                 while True:
                     if pxl == 1:
-                        print("XL credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 5000 :
+                            pxl5 = s.amount - 5000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",pxl5)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif pxl == 2:
-                        print("XL credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 10000 :
+                            pxl10 = s.amount - 10000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",pxl10)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif pxl == 3:
-                        print("XL credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 20000 :
+                            pxl20 = s.amount - 20000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",pxl20)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif pxl == 4:
-                        print("XL credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 50000 :
+                            pxl50 = s.amount - 50000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",pxl50)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif pxl == 5:
-                        print("XL credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 100000 :
+                            pxl100 = s.amount - 100000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",pxl100)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
+                        break
+                    elif pxl == 6:
+                        s.pulsa()
+                        s.menu_pulsa()
+                        break
                     else :
                         print("enter the correct input")
                         self.menu_pulsa()
@@ -197,28 +269,63 @@ class online_payment(Account):
             elif choise_pulsa == 3:
                 int(input("IM3 \nEnter your mobile number: "))
                 print("Select the credit you want to buy: ")
-                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000")
+                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000 \n6. Back")
                 pim3 = int(input("Input Your Choice: "))
                 while True:
                     if pim3 == 1:
-                        print("IM3 credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 5000 :
+                            pim35 = s.amount - 5000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",pim35)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif pim3 == 2:
-                        print("IM3 credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 10000 :
+                            pim310 = s.amount - 10000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",pim310)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif pim3 == 3:
-                        print("IM3 credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 20000 :
+                            pim320 = s.amount - 20000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",pim320)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif pim3 == 4:
-                        print("IM3 credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 50000 :
+                            pim350 = s.amount - 50000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",pim350)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif pim3 == 5:
-                        print("IM3 credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 100000 :
+                            pim3100 = s.amount - 100000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",pim3100)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
+                        break
+                    elif pim3 == 6:
+                        s.pulsa()
+                        s.menu_pulsa()
+                        break
                     else :
                         print("enter the correct input")
                         self.menu_pulsa()
@@ -226,28 +333,63 @@ class online_payment(Account):
             elif choise_pulsa == 4:
                 int(input("AXIS \nEnter your mobile number: "))
                 print("Select the credit you want to buy: ")
-                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000")
+                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000 \n6. Back")
                 paxis = int(input("Input Your Choice: "))
                 while True:
                     if paxis == 1:
-                        print("Axis credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 5000 :
+                            paxis5 = s.amount - 5000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",paxis5)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif paxis == 2:
-                        print("Axis credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 10000 :
+                            paxis10 = s.amount - 10000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",paxis10)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif paxis == 3:
-                        print("Axis credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 20000 :
+                            paxis20 = s.amount - 20000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",paxis20)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif paxis == 4:
-                        print("Axis credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 50000 :
+                            paxis50 = s.amount - 50000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",paxis50)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif paxis == 5:
-                        print("Axis credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 100000 :
+                            paxis100 = s.amount - 100000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",paxis100)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
+                        break
+                    elif paxis == 6:
+                        s.pulsa()
+                        s.menu_pulsa()
+                        break
                     else :
                         print("enter the correct input")
                         self.menu_pulsa()
@@ -255,31 +397,71 @@ class online_payment(Account):
             elif choise_pulsa == 5:
                 int(input("TRI \nEnter your mobile number: "))
                 print("Select the credit you want to buy: ")
-                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000")
+                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000 \n6. Back")
                 ptri = int(input("Input Your Choice: "))
                 while True:
                     if ptri == 1:
-                        print("Tri credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 5000 :
+                            ptri5 = s.amount - 5000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",ptri5)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif ptri == 2:
-                        print("Tri credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 10000 :
+                            ptri10 = s.amount - 10000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",ptri10)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif ptri == 3:
-                        print("Tri credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 20000 :
+                            ptri20 = s.amount - 20000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",ptri20)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif ptri == 4:
-                        print("Tri credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 50000 :
+                            ptri50 = s.amount - 50000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",ptri50)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
                         break
                     elif ptri == 5:
-                        print("Tri credit purchases successful");
-                        print("Your remaining balance is ")
+                        if s.amount >= 100000 :
+                            ptri100 = s.amount - 100000
+                            print("Telkomsel credit purchases successful");
+                            print("Your remaining balance is ",ptri100)
+                            print("\nThank Your, Have A Nice Day :)")
+                        else : 
+                            print("the balance is not enough!\n")
+                            s.menu_pulsa()
+                        break
+                    elif ptri == 6:
+                        s.pulsa()
+                        s.menu_pulsa()
+                        break
                     else :
                         print("enter the correct input")
                         self.menu_pulsa()
+                break
+            elif choise_pulsa == 6:
+                online_payment()
+                s.menu_online_payment()
+                s.summon_online_payment()
                 break
             else :
                 self.menu_pulsa()
@@ -289,28 +471,69 @@ class online_payment(Account):
         self.token_listrik()
         int(input("Enter your Token number: "))
         print("Select the credit you want to buy: ")
-        print("1. Rp.20,000 \n2. Rp.50,000 \n3. Rp.100,000 \n4. Rp.150,000 \n5. Rp.200,000 ")
+        print("1. Rp.20,000 \n2. Rp.50,000 \n3. Rp.100,000 \n4. Rp.150,000 \n5. Rp.200,000 \n6. Back")
         token = int(input("Input Your Choice: "))
         while True:
             if token == 1:
-                print("Your electric token purchases successful");
-                print("Your remaining balance is ")
-                break
+                if s.amount >= 20000:
+                    tokenlistrik20 = s.amount - 20000
+                    print("Your electric token purchases successful");
+                    print("Your remaining balance is ", tokenlistrik20)
+                    print("\nThank Your, Have A Nice Day :)")
+                    break
+                else : 
+                    print("the balance is not enough!\n")
+                    s.menu_token_listrik()
+                    break
             elif token == 2:
-                print("Your electric token purchases successful");
-                print("Your remaining balance is ")
-                break
+                if s.amount >= 50000:
+                    tokenlistrik50 = s.amount - 50000
+                    print("Your electric token purchases successful");
+                    print("Your remaining balance is ", tokenlistrik50)
+                    print("\nThank Your, Have A Nice Day :)")
+                    break
+                else : 
+                    print("the balance is not enough!\n")
+                    s.menu_token_listrik()
+                    break
             elif token == 3:
-                print("Your electric token purchases successful");
-                print("Your remaining balance is ")
-                break
+                if s.amount >= 100000:
+                    tokenlistrik100 = s.amount - 100000
+                    print("Your electric token purchases successful");
+                    print("Your remaining balance is ", tokenlistrik100)
+                    print("\nThank Your, Have A Nice Day :)")
+                    break
+                else : 
+                    print("the balance is not enough!\n")
+                    s.menu_token_listrik()
+                    break
             elif token == 4:
-                print("Your electric token purchases successful");
-                print("Your remaining balance is ")
-                break
+                if s.amount >= 150000:
+                    tokenlistrik150 = s.amount - 150000
+                    print("Your electric token purchases successful");
+                    print("Your remaining balance is ", tokenlistrik150)
+                    print("\nThank Your, Have A Nice Day :)")
+                    break
+                else : 
+                    print("the balance is not enough!\n")
+                    s.menu_token_listrik()
+                    break
             elif token == 5:
-                print("Your electric token purchases successful");
-                print("Your remaining balance is ")
+                if s.amount >= 200000:
+                    tokenlistrik200 = s.amount - 200000
+                    print("Your electric token purchases successful");
+                    print("Your remaining balance is ", tokenlistrik200)
+                    print("\nThank Your, Have A Nice Day :)")
+                    break
+                else : 
+                    print("the balance is not enough!\n")
+                    s.menu_token_listrik()
+                    break
+            elif token == 6:
+                    online_payment()
+                    s.menu_online_payment()
+                    s.summon_online_payment()
+                    break
             else :
                 print("enter the correct input")
                 self.menu_token_listrik()
