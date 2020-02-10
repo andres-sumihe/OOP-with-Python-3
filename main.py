@@ -6,15 +6,17 @@ class Account:
     '''
         MAIN CLASS
     '''
+    class_list = {}
+    data = []
+    temp = []
     def __init__(self):
+        self.class_list
+        self.data
+        self.temp
+    def menu(self):
         print("=========================================")
         print("|       Welcome to Bank GankBank        |")
         print("=========================================")
-        self.class_list = {}
-        self.data = []
-        self.temp = []
-
-    def menu(self):
         print("1. Sign up")
         print("2. Sign in")
         print("3. Exit")
@@ -28,40 +30,26 @@ class Account:
         self.__AccNum = input("Input Your Account Number : ")
         self.__Pin  = input("Input Your PIN : ")
         self.__ammount = float(input("Input your first deposite (min: $100) : "))
-
         self.data.append(self.__Name)
         self.data.append(self.__AccNum)
         self.data.append(self.__ammount)
-        self.class_list[self.__Pin] = [self.__Name,self.__AccNum,self.__ammount] # This will create new key and new value
-        print(self.class_list)                                                   # ==========================================
-                                                                                 # So use your brain MTFK, Stop wasting time 
-                                                                                 # and do your jobs MTFK
-                                                                                 # Im to tired to handle all of your mess guys
-                                                                                 # So please Understand me MTFK
-                                                                                 # I can do this alone if i want, but how about
-                                                                                 # team work? are you useless guys ?
-                                                                                 # if you feel stupid or can't do something about
-                                                                                 # programming, just start to learn more
-                                                                                 # 
-                                                                                 # Overall, Good Job Team :)
-                                                                                 # Thanks for your participant :)
-                                                                                 # if i make you guys upset, you can take this project
-                                                                                 # i wont take, i will out from this team,
-                                                                                 # im not kidding btw, hehe,
-                                                                                 # im telling you what i have to tell
-
+        self.class_list[self.__Pin] = [self.__Name,self.__AccNum,self.__ammount]                                                    
         print("=========================================")
         print("Your Account Has Been Create")
-        print(self.class_list)
         
     def login(self):
         print("=========================================")
         print("|         Sign in your account          |")
         print("=========================================")
 
+        print(self.class_list)
         InAccNum = input("Input Your Account Number : ")
         InputPin = input("Input Your PIN :")
-
+        for i in self.class_list:
+            if InputPin == i:
+                print("test", i[0])
+                if self.class_list[i[0]][1] == InAccNum:
+                    print("Login")
     def summon(self):
         s = Account()
         s.menu()
@@ -78,7 +66,7 @@ class Account:
 
 s = Account()
 while True:
-    s.create_account()
+    s.summon()
 
 class ATM(Account):
     def __init__(self):
