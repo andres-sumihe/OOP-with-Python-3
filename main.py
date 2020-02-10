@@ -218,8 +218,8 @@ class online_payment(ATM):
                 ptelkomsel = int(input("Input Your Choice: "))
                 while True:
                     if ptelkomsel == 1:
-                        if self.__ammount >= 5000 :
-                            telkomsel5 = self.amount - 5000
+                        if self.class_list[self.temp[0]][2] >= 5000 :
+                            telkomsel5 = self.class_list[self.temp[0]][2] - 5000
                             print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",telkomsel5)
                             print("\nThank Your, Have A Nice Day :)")
@@ -230,9 +230,9 @@ class online_payment(ATM):
                             self.summon_online_payment()
                         break
                     elif ptelkomsel == 2:
-                        if self.amount >= 10000 :
-                            telkomsel10 = self.amount - 10000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 10000 :
+                            telkomsel10 = self.class_list[self.temp[0]][2] - 10000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",telkomsel10)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -240,9 +240,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif ptelkomsel == 3:
-                        if self.amount >= 20000 :
-                            telkomsel20 = self.amount - 20000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 20000 :
+                            telkomsel20 = self.class_list[self.temp[0]][2] - 20000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",telkomsel20)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -250,9 +250,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif ptelkomsel == 4:
-                        if self.amount >= 50000 :
-                            telkomsel50 = self.amount - 50000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 50000 :
+                            telkomsel50 = self.class_list[self.temp[0]][2] - 50000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",telkomsel50)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -260,9 +260,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif ptelkomsel == 5:
-                        if self.amount >= 100000 :
-                            telkomsel100 = self.amount - 100000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 100000 :
+                            telkomsel100 = self.class_list[self.temp[0]][2] - 100000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",telkomsel100)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -284,9 +284,9 @@ class online_payment(ATM):
                 pxl = int(input("Input Your Choice: "))
                 while True:
                     if pxl == 1:
-                        if self.amount >= 5000 :
-                            pxl5 = self.amount - 5000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 5000 :
+                            pxl5 = self.class_list[self.temp[0]][2] - 5000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",pxl5)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -294,9 +294,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pxl == 2:
-                        if self.amount >= 10000 :
-                            pxl10 = self.amount - 10000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 10000 :
+                            pxl10 = self.class_list[self.temp[0]][2] - 10000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",pxl10)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -304,9 +304,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pxl == 3:
-                        if self.amount >= 20000 :
-                            pxl20 = self.amount - 20000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 20000 :
+                            pxl20 = self.class_list[self.temp[0]][2] - 20000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",pxl20)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -314,9 +314,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pxl == 4:
-                        if self.amount >= 50000 :
-                            pxl50 = self.amount - 50000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 50000 :
+                            pxl50 = self.class_list[self.temp[0]][2] - 50000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",pxl50)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -324,9 +324,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pxl == 5:
-                        if self.amount >= 100000 :
-                            pxl100 = self.amount - 100000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 100000 :
+                            pxl100 = self.class_list[self.temp[0]][2] - 100000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",pxl100)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -348,9 +348,9 @@ class online_payment(ATM):
                 pim3 = int(input("Input Your Choice: "))
                 while True:
                     if pim3 == 1:
-                        if self.amount >= 5000 :
-                            pim35 = self.amount - 5000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 5000 :
+                            pim35 = self.class_list[self.temp[0]][2] - 5000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",pim35)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -358,9 +358,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pim3 == 2:
-                        if self.amount >= 10000 :
-                            pim310 = self.amount - 10000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 10000 :
+                            pim310 = self.class_list[self.temp[0]][2] - 10000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",pim310)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -368,9 +368,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pim3 == 3:
-                        if self.amount >= 20000 :
-                            pim320 = self.amount - 20000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 20000 :
+                            pim320 = self.class_list[self.temp[0]][2] - 20000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",pim320)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -378,9 +378,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pim3 == 4:
-                        if self.amount >= 50000 :
-                            pim350 = self.amount - 50000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 50000 :
+                            pim350 = self.class_list[self.temp[0]][2] - 50000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",pim350)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -388,9 +388,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pim3 == 5:
-                        if self.amount >= 100000 :
-                            pim3100 = self.amount - 100000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 100000 :
+                            pim3100 = self.class_list[self.temp[0]][2] - 100000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",pim3100)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -412,9 +412,9 @@ class online_payment(ATM):
                 paxis = int(input("Input Your Choice: "))
                 while True:
                     if paxis == 1:
-                        if self.amount >= 5000 :
-                            paxis5 = self.amount - 5000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 5000 :
+                            paxis5 = self.class_list[self.temp[0]][2] - 5000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",paxis5)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -422,9 +422,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif paxis == 2:
-                        if self.amount >= 10000 :
-                            paxis10 = self.amount - 10000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 10000 :
+                            paxis10 = self.class_list[self.temp[0]][2] - 10000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",paxis10)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -432,9 +432,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif paxis == 3:
-                        if self.amount >= 20000 :
-                            paxis20 = self.amount - 20000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 20000 :
+                            paxis20 = self.class_list[self.temp[0]][2] - 20000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",paxis20)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -442,9 +442,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif paxis == 4:
-                        if self.amount >= 50000 :
-                            paxis50 = self.amount - 50000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 50000 :
+                            paxis50 = self.class_list[self.temp[0]][2] - 50000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",paxis50)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -452,9 +452,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif paxis == 5:
-                        if self.amount >= 100000 :
-                            paxis100 = self.amount - 100000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 100000 :
+                            paxis100 = self.class_list[self.temp[0]][2] - 100000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",paxis100)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -476,9 +476,9 @@ class online_payment(ATM):
                 ptri = int(input("Input Your Choice: "))
                 while True:
                     if ptri == 1:
-                        if self.amount >= 5000 :
-                            ptri5 = self.amount - 5000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 5000 :
+                            ptri5 = self.class_list[self.temp[0]][2] - 5000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",ptri5)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -486,9 +486,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif ptri == 2:
-                        if self.amount >= 10000 :
-                            ptri10 = self.amount - 10000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 10000 :
+                            ptri10 = self.class_list[self.temp[0]][2] - 10000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",ptri10)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -496,9 +496,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif ptri == 3:
-                        if self.amount >= 20000 :
-                            ptri20 = self.amount - 20000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 20000 :
+                            ptri20 = self.class_list[self.temp[0]][2] - 20000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",ptri20)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -506,9 +506,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif ptri == 4:
-                        if self.amount >= 50000 :
-                            ptri50 = self.amount - 50000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 50000 :
+                            ptri50 = self.class_list[self.temp[0]][2] - 50000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",ptri50)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -516,9 +516,9 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif ptri == 5:
-                        if self.amount >= 100000 :
-                            ptri100 = self.amount - 100000
-                            print("Telkomsel credit purchases successful");
+                        if self.class_list[self.temp[0]][2] >= 100000 :
+                            ptri100 = self.class_list[self.temp[0]][2] - 100000
+                            print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",ptri100)
                             print("\nThank Your, Have A Nice Day :)")
                         else : 
@@ -550,9 +550,9 @@ class online_payment(ATM):
         token = int(input("Input Your Choice: "))
         while True:
             if token == 1:
-                if self.amount >= 20000:
-                    tokenlistrik20 = self.amount - 20000
-                    print("Your electric token purchases successful");
+                if self.class_list[self.temp[0]][2] >= 20000:
+                    tokenlistrik20 = self.class_list[self.temp[0]][2] - 20000
+                    print("Your electric token purchases successful")
                     print("Your remaining balance is ", tokenlistrik20)
                     print("\nThank Your, Have A Nice Day :)")
                     break
@@ -561,9 +561,9 @@ class online_payment(ATM):
                     self.menu_token_listrik()
                     break
             elif token == 2:
-                if self.amount >= 50000:
-                    tokenlistrik50 = self.amount - 50000
-                    print("Your electric token purchases successful");
+                if self.class_list[self.temp[0]][2] >= 50000:
+                    tokenlistrik50 = self.class_list[self.temp[0]][2] - 50000
+                    print("Your electric token purchases successful")
                     print("Your remaining balance is ", tokenlistrik50)
                     print("\nThank Your, Have A Nice Day :)")
                     break
@@ -572,9 +572,9 @@ class online_payment(ATM):
                     self.menu_token_listrik()
                     break
             elif token == 3:
-                if self.amount >= 100000:
-                    tokenlistrik100 = self.amount - 100000
-                    print("Your electric token purchases successful");
+                if self.class_list[self.temp[0]][2] >= 100000:
+                    tokenlistrik100 = self.class_list[self.temp[0]][2] - 100000
+                    print("Your electric token purchases successful")
                     print("Your remaining balance is ", tokenlistrik100)
                     print("\nThank Your, Have A Nice Day :)")
                     break
@@ -583,9 +583,9 @@ class online_payment(ATM):
                     self.menu_token_listrik()
                     break
             elif token == 4:
-                if self.amount >= 150000:
-                    tokenlistrik150 = self.amount - 150000
-                    print("Your electric token purchases successful");
+                if self.class_list[self.temp[0]][2] >= 150000:
+                    tokenlistrik150 = self.class_list[self.temp[0]][2] - 150000
+                    print("Your electric token purchases successful")
                     print("Your remaining balance is ", tokenlistrik150)
                     print("\nThank Your, Have A Nice Day :)")
                     break
@@ -594,9 +594,9 @@ class online_payment(ATM):
                     self.menu_token_listrik()
                     break
             elif token == 5:
-                if self.amount >= 200000:
-                    tokenlistrik200 = self.amount - 200000
-                    print("Your electric token purchases successful");
+                if self.class_list[self.temp[0]][2] >= 200000:
+                    tokenlistrik200 = self.class_list[self.temp[0]][2] - 200000
+                    print("Your electric token purchases successful")
                     print("Your remaining balance is ", tokenlistrik200)
                     print("\nThank Your, Have A Nice Day :)")
                     break
@@ -652,8 +652,8 @@ class send_money(Account):
         int(input("Input destination account: "))
         trans = int(input("Input Nominal to be transferred : "))
         while True:
-            if self.amount >= trans :
-               transfer_rek = self.amount - trans
+            if self.class_list[self.temp[0]][2] >= trans :
+               transfer_rek = self.class_list[self.temp[0]][2] - trans
                print("\nSuccessful! ")
                print("\nYour Balance : ",transfer_rek)
                break
@@ -666,8 +666,8 @@ class send_money(Account):
         int(input("Input destination Virtual Account  : "))
         trans = int(input("Input Nominal to be transferred : "))
         while True:
-            if self.amount >= trans :
-               transfer_rek = self.amount - trans
+            if self.class_list[self.temp[0]][2] >= trans :
+               transfer_rek = self.class_list[self.temp[0]][2] - trans
                print("\nSuccessful! ")
                print("\nYour Balance : ",transfer_rek)
                break
