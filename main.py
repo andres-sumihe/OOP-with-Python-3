@@ -138,32 +138,148 @@ class online_payment(Account):
             if choise_pulsa == 1:
                 int(input("TELKOMSEL \nEnter your mobile number: "))
                 print("Select the credit you want to buy: ")
-                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000 \n6. Rp.150,000 \n7. Rp.200,000")
-                int(input("Input Your Choice: "))
+                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000")
+                ptelkomsel = int(input("Input Your Choice: "))
+                while True:
+                    if ptelkomsel == 1:
+                        telkomsel5 = s.amount - 5000
+                        print("Telkomsel credit purchases successful");
+                        print("Your remaining balance is ",telkomsel5)
+                        break
+                    elif ptelkomsel == 2:
+                        print("Telkomsel credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif ptelkomsel == 3:
+                        print("Telkomsel credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif ptelkomsel == 4:
+                        print("Telkomsel credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif ptelkomsel == 5:
+                        print("Telkomsel credit purchases successful");
+                        print("Your remaining balance is ")
+                    else :
+                        print("enter the correct input")
+                        self.menu_pulsa() 
                 break
             elif choise_pulsa == 2:
-                int(input("Xl \nEnter your mobile number: "))
+                int(input("XL \nEnter your mobile number: "))
                 print("Select the credit you want to buy: ")
-                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000 \n6. Rp.150,000 \n7. Rp.200,000")
-                int(input("Input Your Choice: "))
+                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000")
+                pxl = int(input("Input Your Choice: "))
+                while True:
+                    if pxl == 1:
+                        print("XL credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif pxl == 2:
+                        print("XL credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif pxl == 3:
+                        print("XL credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif pxl == 4:
+                        print("XL credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif pxl == 5:
+                        print("XL credit purchases successful");
+                        print("Your remaining balance is ")
+                    else :
+                        print("enter the correct input")
+                        self.menu_pulsa()
                 break
             elif choise_pulsa == 3:
                 int(input("IM3 \nEnter your mobile number: "))
                 print("Select the credit you want to buy: ")
-                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000 \n6. Rp.150,000 \n7. Rp.200,000")
-                int(input("Input Your Choice: "))
+                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000")
+                pim3 = int(input("Input Your Choice: "))
+                while True:
+                    if pim3 == 1:
+                        print("IM3 credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif pim3 == 2:
+                        print("IM3 credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif pim3 == 3:
+                        print("IM3 credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif pim3 == 4:
+                        print("IM3 credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif pim3 == 5:
+                        print("IM3 credit purchases successful");
+                        print("Your remaining balance is ")
+                    else :
+                        print("enter the correct input")
+                        self.menu_pulsa()
                 break
             elif choise_pulsa == 4:
                 int(input("AXIS \nEnter your mobile number: "))
                 print("Select the credit you want to buy: ")
-                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000 \n6. Rp.150,000 \n7. Rp.200,000")
-                int(input("Input Your Choice: "))
+                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000")
+                paxis = int(input("Input Your Choice: "))
+                while True:
+                    if paxis == 1:
+                        print("Axis credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif paxis == 2:
+                        print("Axis credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif paxis == 3:
+                        print("Axis credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif paxis == 4:
+                        print("Axis credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif paxis == 5:
+                        print("Axis credit purchases successful");
+                        print("Your remaining balance is ")
+                    else :
+                        print("enter the correct input")
+                        self.menu_pulsa()
                 break
             elif choise_pulsa == 5:
                 int(input("TRI \nEnter your mobile number: "))
                 print("Select the credit you want to buy: ")
-                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000 \n6. Rp.150,000 \n7. Rp.200,000")
-                int(input("Input Your Choice: "))
+                print("1. Rp.5,000 \n2. Rp.10,000 \n3. Rp.20,000 \n4. Rp.50,000 \n5. Rp.100,000")
+                ptri = int(input("Input Your Choice: "))
+                while True:
+                    if ptri == 1:
+                        print("Tri credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif ptri == 2:
+                        print("Tri credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif ptri == 3:
+                        print("Tri credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif ptri == 4:
+                        print("Tri credit purchases successful");
+                        print("Your remaining balance is ")
+                        break
+                    elif ptri == 5:
+                        print("Tri credit purchases successful");
+                        print("Your remaining balance is ")
+                    else :
+                        print("enter the correct input")
+                        self.menu_pulsa()
                 break
             else :
                 self.menu_pulsa()
@@ -174,7 +290,31 @@ class online_payment(Account):
         int(input("Enter your Token number: "))
         print("Select the credit you want to buy: ")
         print("1. Rp.20,000 \n2. Rp.50,000 \n3. Rp.100,000 \n4. Rp.150,000 \n5. Rp.200,000 ")
-        int(input("Input Your Choice: "))
+        token = int(input("Input Your Choice: "))
+        while True:
+            if token == 1:
+                print("Your electric token purchases successful");
+                print("Your remaining balance is ")
+                break
+            elif token == 2:
+                print("Your electric token purchases successful");
+                print("Your remaining balance is ")
+                break
+            elif token == 3:
+                print("Your electric token purchases successful");
+                print("Your remaining balance is ")
+                break
+            elif token == 4:
+                print("Your electric token purchases successful");
+                print("Your remaining balance is ")
+                break
+            elif token == 5:
+                print("Your electric token purchases successful");
+                print("Your remaining balance is ")
+            else :
+                print("enter the correct input")
+                self.menu_token_listrik()
+                break
             
         
     
