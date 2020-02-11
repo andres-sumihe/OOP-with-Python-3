@@ -70,6 +70,9 @@ class ATM(Account):
                 self.login()
             else:
                 print("Thank You, Have A Nice Day :)")
+            quit()
+            self.clear()
+            break
     def menuATM(self):
         print("=========================================")
         print("|                  Menu                 |")
@@ -185,7 +188,6 @@ class online_payment(ATM):
                 print("visit github.com/andres-sumihe/OOP-with-python-3")
                 print("Thanks")
                 quit()
-
             else:
                 print("Please enter valid input")
                 break
@@ -666,7 +668,7 @@ class online_payment(ATM):
         print("\n3. Sean Alessandro Pattirane (672018112)")
         print("\n4. Ryan Renaldy Siematauw (672018096)")
         print("\n5. Farrell Giovanno Tanujaya (672018115)")
-        print("\n6. Chrys Nathanael Santosa (672018136)")
+        print("\n6. Chrys Nathanael Santoso (672018135)")
         print("\n7. Adam Belo Paembonan (672018113)")
         print("\n==============================================")
         print("\n")
