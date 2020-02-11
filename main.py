@@ -731,72 +731,101 @@ class online_payment(ATM):
                 self.summon_online_payment()
                 break
 
-class send_money(Account):   
-    def __init__(self):
-        print("=========================================")
-        print("|       Welcome to Send Money           |")
-        print("=========================================")
-    def menu_send_money(self):
-        print("1. Transfers between accounts")
-        print("2. Transfers Virtual Account")
-        print("3. Exit")
-        print("=========================================")
-        
-        
-    def menu_tranfer_rekening(self):
-        int(input("Input destination account: "))
-        trans = int(input("Input Nominal to be transferred : "))
-        while True:
-            if self.class_list[self.temp[0]][2] >= trans :
-               transfer_rek = self.class_list[self.temp[0]][2] - trans
-               print("\nSuccessful! ")
-               print("\nYour Balance : ",transfer_rek)
-               break
-            else :
-                print("Your balance is not enough!!")
-                break
-
-        
-    def menu_virtual_acc(self):
-        int(input("Input destination Virtual Account  : "))
-        trans = int(input("Input Nominal to be transferred : "))
-        while True:
-            if self.class_list[self.temp[0]][2] >= trans :
-               transfer_rek = self.class_list[self.temp[0]][2] - trans
-               print("\nSuccessful! ")
-               print("\nYour Balance : ",transfer_rek)
-               break
-            else :
-                print("Your balance is not enough!!")
-                break
-        
-    def summon_send_money(self):
-        choice_send_money = int(input("Input Your Choice : "))
-        while True:
-            if choice_send_money == 1:
-                self.menu_tranfer_rekening()
-                choice2 = str(input("ingin melakukan transaksi lagi? Y/N "))
-                if choice2 == 'y' or choice2 == 'Y':
-                    pass
-                else :
-                    self.menu_send_money()
-                    break
-            elif choice_send_money == 2 :
-                self.menu_virtual_acc()
-                choice3 = str(input("ingin melakukan transaksi lagi? Y/N "))
-                if choice3 == 'y' or choice3 == 'Y':
-                    pass
-                else :
-                    self.menu_send_money()
-                    break
-            elif choice_send_money == 3 :
-                print("Thank You, Have A Nice Day :)")
-                break
-            else:
-                print("Enter the correct input")
-                self.summon_send_money()
-                break
 
 s = online_payment()
 while True:
     s.summon()
+
+
+# THIS IS A CLASS FOR BONUS POINT, Encapsulation and Polymorphism
+class Hero:
+	#private class variabel
+	__jumlah = 0  #Encapsulation, Private Variable
+
+	def __init__(self,nama,health,attPower,armor):
+		self.__nama = nama
+		self.__healthStandar = health
+		self.__attPowerStandar = attPower
+		self.__armorStandar = armor
+		self.__level = 1
+		self.__exp = 0
+
+		self.__healthMax = self.__healthStandar * self.__level
+		self.__attPower = self.__attPowerStandar * self.__level
+		self.__armor = self.__armorStandar * self.__level
+
+		self.__health = self.__healthMax
+
+		Hero.__jumlah += 1
+
+	@property
+	def info(self):
+		return "{} level {}: \n\thealth = {}/{} \n\tattack = {} \n\tarmor = {}".format(self.__nama,self.__level,self.__health,self.__healthMax,self.__attPower,self.__armor)
+
+	@property
+	def gainExp(self):
+		pass
+
+	@gainExp.setter
+	def gainExp(self,addExp):
+		self.__exp += addExp
+		if (self.__exp >= 100):
+			print(self.__nama, 'level up')
+			self.__level += 1
+			self.__exp -= 100
+
+			self.__healthMax = self.__healthStandar * self.__level
+			self.__attPower = self.__attPowerStandar * self.__level
+			self.__armor = self.__armorStandar * self.__level
+
+	def attack(self,musuh):
+		self.gainExp = 50
+
+
+# UNCOMMENT THIS CODE FOR TESTING ENCAPSULATION
+# Layla = Hero('Layla', 100, 5, 10)
+# axe = Hero('axe', 100, 5, 10)
+# print(Layla.info)
+# Layla.attack(axe)
+# Layla.attack(axe)
+# Layla.attack(axe)
+# print(Layla.info)
+
+
+# CLASS POLYMORPHISM
+class MainClass:
+	def __init__(self,nama,health):
+		self.nama = nama
+		self.health = health
+
+	def showInfo(self):
+		print("showInfo di class Hero")
+		print("{} health: {}".format(
+			self.nama,
+			self.health
+			)
+		)
+
+
+class SubClass(MainClass):
+	def __init__(self,nama):
+		super().__init__(nama,100)
+
+	# polymorphism
+	def showInfo(self):
+		print("showInfo di subclass")
+		print("{} \n\tTipe: intelligent, \n\thealth: {}".format(
+			self.nama,
+			self.health
+			)
+		)
+
+class AnotherSubClass(Hero):
+	def __init__(self,nama):
+		super().__init__(nama,200)
+
+# UNCOMMENT THE CODE BELLOW TO TEST POLYMORPHISM
+
+# TEST = SubClass('Cadita')
+# TEST2 = AnotherSubClass('Minotaur')
+# TEST.showInfo()
