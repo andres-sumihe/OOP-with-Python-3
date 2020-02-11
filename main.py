@@ -196,10 +196,11 @@ class online_payment(ATM):
         print("=========================================")
         print("1. Pulsa")
         print("2. Token Listrik")
-        print("3. Log out")
-        print("4. back")
+        print("3. About")
+        print("4. Log out")
+        print("5. back")
         print("=========================================")
-        
+
     def pulsa(self):
         print("\n=========================================")
         print("|       welcome to pulsa purchase       |")
@@ -651,6 +652,38 @@ class online_payment(ATM):
                 print("Enter the correct input")
                 self.menu_token_listrik()
                 break
+
+
+    def about(self):
+        print("\n==============================================")
+        print("\n|                    About                     |")
+        print("\n==============================================")
+        print("\n")
+        print("\nVersion 1.0.1")
+        print("\nAuthor : ")
+        print("\n1. Andres Sumihe (672018136)")
+        print("\n2. Luis Geraldo Mauboy (672018138)")
+        print("\n3. Sean Alessandro Pattirane (672018112)")
+        print("\n4. Ryan Renaldy Siematauw (672018096)")
+        print("\n5. Farrell Giovanno Tanujaya (672018115)")
+        print("\n6. Chrys Nathanael Santosa (672018136)")
+        print("\n7. Adam Belo Paembonan (672018113)")
+        print("\n==============================================")
+        print("\n")
+        print("\nVisit : Github.com/andres-sumihe/OOP-with-python-3")
+        print("\n")
+        print("\nJoin Our Community: ")
+        print("\narisansecrity.id")
+        print("\nbudakcoding.com")
+        print("\ncodemaster.my.id")
+        print("\n")
+        print("\nContact Us: ")
+        print("\n")
+        print("\nadmin@codemaster.my.id")
+        print("\n")
+        print("\n================================================")
+
+            
                
     def summon_online_payment(self):
         self.menu_online_payment()
@@ -663,9 +696,12 @@ class online_payment(ATM):
                 self.menu_token_listrik()
                 break
             elif choice_online_payment == 3 :
-                self.summon()
+                self.about()
                 break
             elif choice_online_payment == 4 :
+                self.summon()
+                break
+            elif choice_online_payment == 5 :
                 self.menuATM()
             else:
                 print("Enter the correct input")
