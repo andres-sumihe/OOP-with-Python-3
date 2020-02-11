@@ -46,9 +46,6 @@ class Account:
         else: 
             _ = system('clear')
         
-
-
-
 class ATM(Account):
     def __init__(self):
         print("")
@@ -110,15 +107,15 @@ class ATM(Account):
             if InputPin == i:
                 print("test", i[0])
                 if self.class_list[i[0]][1] == InAccNum:
-                    # self.temp.append(self.class_list[i[0]][2])
                     self.temp.append(i[0])
                     print(self.temp[0])
                     print("Login Success")
-                    # self.clear()
+                    self.clear()
                     self.menuATM()
             else: break
         else:
-            print("Please Sign up")
+            print("Your Account Not Found or Wrong Credential, Please Sign up or Try Login Again")
+            self.clear()
             self.summon()
                     
     def transfer(self):
@@ -130,6 +127,7 @@ class ATM(Account):
                 self.class_list[self.temp[0]][2] -= amount
                 print(self.class_list[self.temp[0]][2])
                 print("Found")
+                break
     def withdraw(self):
         amount = float(input("Enter amount to be Withdrawn: "))
         if self.class_list[self.temp[0]][2] >= amount:
@@ -141,8 +139,6 @@ class ATM(Account):
         self.clear()
         print("\n Net Available Balance= ", self.class_list[self.temp[0]][2])
         self.menuATM()
-
-
 
 class online_payment(ATM):
     def __init__(self):
@@ -163,9 +159,10 @@ class online_payment(ATM):
         while True:
             if choice == 1:
                 self.withdraw()
-                break
+                self.menuATM()
             elif choice == 2:
                 self.transfer()
+                self.menuATM()
             elif choice == 3:
                 self.display()
             elif choice == 4:
@@ -219,7 +216,7 @@ class online_payment(ATM):
                 ptelkomsel = int(input("Input Your Choice: "))
                 while True:
                     if ptelkomsel == 1:
-                        telkomsel5 = 5
+                        telkomsel5 = 5000
                         if self.class_list[self.temp[0]][2] >= telkomsel5 :
                             self.class_list[self.temp[0]][2] -= telkomsel5
                             print("Telkomsel credit purchases successful")
@@ -230,7 +227,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif ptelkomsel == 2:
-                        telkomsel10 = 10
+                        telkomsel10 = 10000
                         if self.class_list[self.temp[0]][2] >= telkomsel10 :
                             self.class_list[self.temp[0]][2] -= telkomsel10
                             print("Telkomsel credit purchases successful")
@@ -241,7 +238,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif ptelkomsel == 3:
-                        telkomsel20 = 20
+                        telkomsel20 = 20000
                         if self.class_list[self.temp[0]][2] >= telkomsel20 :
                             self.class_list[self.temp[0]][2] -= telkomsel20
                             print("Telkomsel credit purchases successful")
@@ -252,7 +249,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif ptelkomsel == 4:
-                        telkomsel50 = 50
+                        telkomsel50 = 50000
                         if self.class_list[self.temp[0]][2] >= telkomsel50 :
                             self.class_list[self.temp[0]][2] -= telkomsel50
                             print("Telkomsel credit purchases successful")
@@ -263,7 +260,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif ptelkomsel == 5:
-                        telkomsel100 = 100
+                        telkomsel100 = 100000
                         if self.class_list[self.temp[0]][2] >= telkomsel100 :
                             self.class_list[self.temp[0]][2] -= telkomsel100
                             print("Telkomsel credit purchases successful")
@@ -288,7 +285,7 @@ class online_payment(ATM):
                 pxl = int(input("Input Your Choice: "))
                 while True:
                     if pxl == 1:
-                        pxl5 = 5
+                        pxl5 = 5000
                         if self.class_list[self.temp[0]][2] >= pxl5 :
                             self.class_list[self.temp[0]][2] -= pxl5
                             print("Xl credit purchases successful")
@@ -299,7 +296,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pxl == 2:
-                        pxl10 = 10
+                        pxl10 = 10000
                         if self.class_list[self.temp[0]][2] >= pxl10 :
                             self.class_list[self.temp[0]][2] -= pxl10
                             print("Xl credit purchases successful")
@@ -310,7 +307,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pxl == 3:
-                        pxl20 = 20
+                        pxl20 = 20000
                         if self.class_list[self.temp[0]][2] >= pxl20 :
                             self.class_list[self.temp[0]][2] -= pxl20
                             print("Xl credit purchases successful")
@@ -321,7 +318,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pxl == 4:
-                        pxl50 = 50
+                        pxl50 = 50000
                         if self.class_list[self.temp[0]][2] >= pxl50 :
                             self.class_list[self.temp[0]][2] -= pxl50
                             print("Xl credit purchases successful")
@@ -332,7 +329,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pxl == 5:
-                        pxl100 = 100
+                        pxl100 = 100000
                         if self.class_list[self.temp[0]][2] >= pxl100 :
                             self.class_list[self.temp[0]][2] -= pxl100
                             print("Xl credit purchases successful")
@@ -357,7 +354,7 @@ class online_payment(ATM):
                 pim3 = int(input("Input Your Choice: "))
                 while True:
                     if pim3 == 1:
-                        pim35 = 5
+                        pim35 = 5000
                         if self.class_list[self.temp[0]][2] >= pim35 :
                             self.class_list[self.temp[0]][2] -= pim35
                             print("IM3 credit purchases successful")
@@ -368,7 +365,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pim3 == 2:
-                        pim310 = 10
+                        pim310 = 10000
                         if self.class_list[self.temp[0]][2] >= pim310 :
                             self.class_list[self.temp[0]][2] -= pim310
                             print("IM3 credit purchases successful")
@@ -379,7 +376,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pim3 == 3:
-                        pim320 = 20
+                        pim320 = 20000
                         if self.class_list[self.temp[0]][2] >= pim320 :
                             self.class_list[self.temp[0]][2] -= pim320
                             print("IM3 credit purchases successful")
@@ -390,7 +387,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pim3 == 4:
-                        pim350 = 50
+                        pim350 = 50000
                         if self.class_list[self.temp[0]][2] >= pim350 :
                             self.class_list[self.temp[0]][2] -= pim350
                             print("IM3 credit purchases successful")
@@ -401,7 +398,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif pim3 == 5:
-                        pim3100 = 100
+                        pim3100 = 100000
                         if self.class_list[self.temp[0]][2] >= pim3100 :
                             self.class_list[self.temp[0]][2] -= pim3100
                             print("IM3 credit purchases successful")
@@ -426,7 +423,7 @@ class online_payment(ATM):
                 paxis = int(input("Input Your Choice: "))
                 while True:
                     if paxis == 1:
-                        paxis5 = 5
+                        paxis5 = 5000
                         if self.class_list[self.temp[0]][2] >= paxis5 :
                             self.class_list[self.temp[0]][2] -= paxis5
                             print("Axis credit purchases successful")
@@ -437,7 +434,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif paxis == 2:
-                        paxis10 = 10
+                        paxis10 = 10000
                         if self.class_list[self.temp[0]][2] >= paxis10 :
                             self.class_list[self.temp[0]][2] -= paxis10
                             print("Axis credit purchases successful")
@@ -448,7 +445,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif paxis == 3:
-                        paxis20 = 20
+                        paxis20 = 20000
                         if self.class_list[self.temp[0]][2] >= paxis20  :
                             self.class_list[self.temp[0]][2] -= paxis20 
                             print("Axis credit purchases successful")
@@ -459,7 +456,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif paxis == 4:
-                        paxis50 = 50 
+                        paxis50 = 50000 
                         if self.class_list[self.temp[0]][2] >= paxis50 :
                             self.class_list[self.temp[0]][2] -= paxis50
                             print("Axis credit purchases successful")
@@ -470,7 +467,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif paxis == 5:
-                        paxis100 = 100
+                        paxis100 = 100000
                         if self.class_list[self.temp[0]][2] >= paxis100 :
                             self.class_list[self.temp[0]][2] -= paxis100
                             print("Axis credit purchases successful")
@@ -495,7 +492,7 @@ class online_payment(ATM):
                 ptri = int(input("Input Your Choice: "))
                 while True:
                     if ptri == 1:
-                        ptri5 = 5
+                        ptri5 = 5000
                         if self.class_list[self.temp[0]][2] >= ptri5 :
                             self.class_list[self.temp[0]][2] -=ptri5
                             print("Tri credit purchases successful")
@@ -506,7 +503,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif ptri == 2:
-                        ptri10 = 10
+                        ptri10 = 10000
                         if self.class_list[self.temp[0]][2] >= ptri10 :
                             self.class_list[self.temp[0]][2] -= ptri10
                             print("Tri credit purchases successful")
@@ -517,7 +514,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif ptri == 3:
-                        ptri20 = 20 
+                        ptri20 = 20000
                         if self.class_list[self.temp[0]][2] >= ptri20 :
                             self.class_list[self.temp[0]][2] -= ptri20
                             print("Tri credit purchases successful")
@@ -528,7 +525,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif ptri == 4:
-                        ptri50 = 50
+                        ptri50 = 50000
                         if self.class_list[self.temp[0]][2] >= ptri50 :
                             self.class_list[self.temp[0]][2] - ptri50
                             print("Tri credit purchases successful")
@@ -539,7 +536,7 @@ class online_payment(ATM):
                             self.menu_pulsa()
                         break
                     elif ptri == 5:
-                        ptri100 = 100
+                        ptri100 = 100000
                         if self.class_list[self.temp[0]][2] >= ptri100 :
                             self.class_list[self.temp[0]][2] - ptri100
                             print("Telkomsel credit purchases successful")
@@ -574,7 +571,7 @@ class online_payment(ATM):
         token = int(input("Input Your Choice: "))
         while True:
             if token == 1:
-                tokenlistrik20 = 20
+                tokenlistrik20 = 20000
                 if self.class_list[self.temp[0]][2] >= tokenlistrik20 :
                     self.class_list[self.temp[0]][2] -= tokenlistrik20
                     print("Your electric token purchases successful")
@@ -586,7 +583,7 @@ class online_payment(ATM):
                     self.summon_online_payment()
                     break
             elif token == 2:
-                tokenlistrik50 = 50
+                tokenlistrik50 = 50000
                 if self.class_list[self.temp[0]][2] >= tokenlistrik50:
                     self.class_list[self.temp[0]][2] -= tokenlistrik50
                     print("Your electric token purchases successful")
@@ -598,7 +595,7 @@ class online_payment(ATM):
                     self.menu_token_listrik()
                     break
             elif token == 3:
-                tokenlistrik100 = 100
+                tokenlistrik100 = 100000
                 if self.class_list[self.temp[0]][2] >= tokenlistrik100:
                     self.class_list[self.temp[0]][2] -= tokenlistrik100
                     print("Your electric token purchases successful")
@@ -610,7 +607,7 @@ class online_payment(ATM):
                     self.menu_token_listrik()
                     break
             elif token == 4:
-                tokenlistrik150 = 150
+                tokenlistrik150 = 150000
                 if self.class_list[self.temp[0]][2] >= tokenlistrik150:
                     self.class_list[self.temp[0]][2] -= tokenlistrik150
                     print("Your electric token purchases successful")
@@ -622,7 +619,7 @@ class online_payment(ATM):
                     self.menu_token_listrik()
                     break
             elif token == 5:
-                tokenlistrik200 = 200
+                tokenlistrik200 = 200000
                 if self.class_list[self.temp[0]][2] >= tokenlistrik200:
                     self.class_list[self.temp[0]][2] -= tokenlistrik200
                     print("Your electric token purchases successful")
