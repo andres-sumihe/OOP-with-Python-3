@@ -32,7 +32,31 @@ class Account:
         self.__AccNum = input("Input Your Account Number : ")
         self.__Pin  = input("Input Your PIN : ")
         self.__ammount = float(input("Input your first deposit (min: Rp.100.000,00) : "))
+        if len(self.class_list) >0:
+            for i in list(self.class_list):
+                print(i)
+                if self.__Pin == i or self.class_list[i[0]][1] == self.__AccNum:
+                    print("Your Account Already Created Before, Please Login")
+                    break
+                else: 
+                    self.data.append(self.__Name)
+                    self.data.append(self.__AccNum)
+                    self.data.append(self.__ammount)
+                    self.class_list[self.__Pin] = [self.__Name,self.__AccNum,self.__ammount]                                                    
+                    print("=========================================")
+                    print("Your Account Has Been Created")
+                    pass
+        else:
+            self.data.append(self.__Name)
+            self.data.append(self.__AccNum)
+            self.data.append(self.__ammount)
+            self.class_list[self.__Pin] = [self.__Name,self.__AccNum,self.__ammount]                                                    
+            print("=========================================")
+            print("Your Account Has Been Created")
         while True:
+            if self.__Pin and self.__AccNum in self.class_list:
+                print("Your Account Already Created")
+                break
             if self.__ammount <= 0:
                 print("Impossible Ammount or You are a poor one :(")
                 print("input again!!!")
@@ -41,13 +65,6 @@ class Account:
                 print("Deposited ammount must be over or equal to Rp.100.000,00")
                 self.__ammount = float(input("Input your first deposit (min: Rp.100.000,00) : "))
             else: break
-        self.data.append(self.__Name)
-        self.data.append(self.__AccNum)
-        self.data.append(self.__ammount)
-        self.class_list[self.__Pin] = [self.__Name,self.__AccNum,self.__ammount]                                                    
-        print("=========================================")
-        print("Your Account Has Been Created")
-    
     def clear(self): 
         sleep(2)
         if name == 'nt': 
@@ -68,11 +85,12 @@ class ATM(Account):
                 break
             elif choice == 2:
                 self.login()
+                break
             else:
                 print("Thank You, Have A Nice Day :)")
-            quit()
-            self.clear()
-            break
+                quit()
+                self.clear()
+                break
     def menuATM(self):
         print("=========================================")
         print("|                  Menu                 |")
@@ -96,6 +114,7 @@ class ATM(Account):
             elif choice == 4:
                 self.display()
             elif choice == 5:
+                self.temp.clear()
                 self.summon()
             elif choice == 6:
                 self.clear()
@@ -117,6 +136,7 @@ class ATM(Account):
         InAccNum = input("Input Your Account Number : ")
         InputPin = input("Input Your PIN :")
         for i in self.class_list:
+            print("TEST",i)
             if InputPin == i:
                 print("test", i[0])
                 if self.class_list[i[0]][1] == InAccNum:
@@ -125,11 +145,10 @@ class ATM(Account):
                     print("Login Success")
                     self.clear()
                     self.menuATM()
-            else: break
-        else:
-            print("Your Account Not Found or Wrong Credential, Please Sign up or Try Login Again")
-            self.clear()
-            self.summon()
+            else: 
+                # self.clear()
+                pass
+        else: print("Your Account Not Found or Wrong Credential, Please Sign up or Try Login Again"); self.summon()
                     
     def transfer(self):
         reciever = input("Enter destination account number: ")
@@ -181,6 +200,7 @@ class online_payment(ATM):
             elif choice == 4:
                 self.summon_online_payment()
             elif choice == 5:
+                self.temp.clear()
                 self.summon()
             elif choice == 6:
                 self.clear()
@@ -701,6 +721,7 @@ class online_payment(ATM):
                 self.about()
                 break
             elif choice_online_payment == 4 :
+                self.temp.clear()
                 self.summon()
                 break
             elif choice_online_payment == 5 :
