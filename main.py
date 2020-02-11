@@ -35,7 +35,7 @@ class Account:
         if len(self.class_list) >0:
             for i in list(self.class_list):
                 print(i)
-                if self.__Pin == i or self.class_list[i[0]][1] == self.__AccNum:
+                if self.__Pin == i or self.class_list[i][1] == self.__AccNum:
                     print("Your Account Already Created Before, Please Login")
                     break
                 else: 
@@ -136,12 +136,9 @@ class ATM(Account):
         InAccNum = input("Input Your Account Number : ")
         InputPin = input("Input Your PIN :")
         for i in self.class_list:
-            print("TEST",i)
             if InputPin == i:
-                print("test", i[0])
-                if self.class_list[i[0]][1] == InAccNum:
-                    self.temp.append(i[0])
-                    print(self.temp[0])
+                if self.class_list[i][1] == InAccNum:
+                    self.temp.append(i)
                     print("Login Success")
                     self.clear()
                     self.menuATM()
