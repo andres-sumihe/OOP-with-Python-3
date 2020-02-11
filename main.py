@@ -31,13 +31,22 @@ class Account:
         self.__Name = input("Input your name : ")
         self.__AccNum = input("Input Your Account Number : ")
         self.__Pin  = input("Input Your PIN : ")
-        self.__ammount = float(input("Input your first deposite (min: $100) : "))
+        self.__ammount = float(input("Input your first deposit (min: Rp.100.000,00) : "))
+        while True:
+            if self.__ammount <= 0:
+                print("Impossible Ammount or You are a poor one :(")
+                print("input again!!!")
+                self.__ammount = float(input("Input your first deposit (min: Rp.100.000,00) : "))
+            elif self.__ammount < 100000:
+                print("Deposited ammount must be over or equal to Rp.100.000,00")
+                self.__ammount = float(input("Input your first deposit (min: Rp.100.000,00) : "))
+            else: break
         self.data.append(self.__Name)
         self.data.append(self.__AccNum)
         self.data.append(self.__ammount)
         self.class_list[self.__Pin] = [self.__Name,self.__AccNum,self.__ammount]                                                    
         print("=========================================")
-        print("Your Account Has Been Create")
+        print("Your Account Has Been Created")
     
     def clear(self): 
         sleep(2)
@@ -60,7 +69,7 @@ class ATM(Account):
             elif choice == 2:
                 self.login()
             else:
-                print("Thank Your, Have A Nice Day :)")
+                print("Thank You, Have A Nice Day :)")
     def menuATM(self):
         print("=========================================")
         print("|                  Menu                 |")
@@ -94,6 +103,7 @@ class ATM(Account):
 
             else:
                 print("Please enter valid input")
+                break
         
 
     def login(self):
@@ -178,6 +188,8 @@ class online_payment(ATM):
 
             else:
                 print("Please enter valid input")
+                break
+            
     def menu_online_payment(self):
         print("=========================================")
         print("|       Welcome to Online Payment       |")
@@ -212,7 +224,7 @@ class online_payment(ATM):
             if choise_pulsa == 1:
                 int(input("TELKOMSEL \nEnter your mobile number: "))
                 print("Select the credit you want to buy: ")
-                print("1. $.5 \n2. $.10 \n3. $.20 \n4. $.50 \n5. $.100 \n6. Back")
+                print("1. Rp. 5.000 \n2. Rp. 10.000 \n3. Rp. 20.000 \n4. Rp. 50.000 \n5. Rp. 100.000 \n6. Back")
                 ptelkomsel = int(input("Input Your Choice: "))
                 while True:
                     if ptelkomsel == 1:
@@ -221,9 +233,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= telkomsel5
                             print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif ptelkomsel == 2:
@@ -232,9 +244,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= telkomsel10
                             print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif ptelkomsel == 3:
@@ -243,9 +255,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= telkomsel20
                             print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif ptelkomsel == 4:
@@ -254,9 +266,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= telkomsel50
                             print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif ptelkomsel == 5:
@@ -265,9 +277,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= telkomsel100
                             print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif ptelkomsel == 6:
@@ -275,13 +287,13 @@ class online_payment(ATM):
                         self.menu_pulsa()
                         break
                     else :
-                        print("enter the correct input")
+                        print("Enter the correct input")
                         self.menu_pulsa() 
                 break
             elif choise_pulsa == 2:
                 int(input("XL \nEnter your mobile number: "))
                 print("Select the credit you want to buy: ")
-                print("1. $.5 \n2. $.10 \n3. $.20 \n4. $.50 \n5. $.100 \n6. Back")
+                print("1. Rp. 5.000 \n2. Rp. 10.000 \n3. Rp. 20.000 \n4. Rp. 50.000 \n5. Rp. 100.000 \n6. Back")
                 pxl = int(input("Input Your Choice: "))
                 while True:
                     if pxl == 1:
@@ -290,9 +302,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= pxl5
                             print("Xl credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif pxl == 2:
@@ -301,9 +313,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= pxl10
                             print("Xl credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif pxl == 3:
@@ -312,9 +324,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= pxl20
                             print("Xl credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif pxl == 4:
@@ -323,9 +335,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= pxl50
                             print("Xl credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif pxl == 5:
@@ -334,9 +346,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= pxl100
                             print("Xl credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif pxl == 6:
@@ -344,13 +356,13 @@ class online_payment(ATM):
                         self.menu_pulsa()
                         break
                     else :
-                        print("enter the correct input")
+                        print("Enter the correct input")
                         self.menu_pulsa()
                 break
             elif choise_pulsa == 3:
                 int(input("IM3 \nEnter your mobile number: "))
                 print("Select the credit you want to buy: ")
-                print("1. $.5 \n2. $.10 \n3. $.20 \n4. $.50 \n5. $.100 \n6. Back")
+                print("1. Rp. 5.000 \n2. Rp. 10.000 \n3. Rp. 20.000 \n4. Rp. 50.000 \n5. Rp. 100.000 \n6. Back")
                 pim3 = int(input("Input Your Choice: "))
                 while True:
                     if pim3 == 1:
@@ -359,9 +371,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= pim35
                             print("IM3 credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif pim3 == 2:
@@ -370,9 +382,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= pim310
                             print("IM3 credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif pim3 == 3:
@@ -381,9 +393,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= pim320
                             print("IM3 credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif pim3 == 4:
@@ -392,9 +404,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= pim350
                             print("IM3 credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif pim3 == 5:
@@ -403,9 +415,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= pim3100
                             print("IM3 credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif pim3 == 6:
@@ -413,13 +425,13 @@ class online_payment(ATM):
                         self.menu_pulsa()
                         break
                     else :
-                        print("enter the correct input")
+                        print("Enter the correct input")
                         self.menu_pulsa()
                 break
             elif choise_pulsa == 4:
                 int(input("AXIS \nEnter your mobile number: "))
                 print("Select the credit you want to buy: ")
-                print("1. $.5 \n2. $.10 \n3. $.20 \n4. $.50 \n5. $.100 \n6. Back")
+                print("1. Rp. 5.000 \n2. Rp. 10.000 \n3. Rp. 20.000 \n4. Rp. 50.000 \n5. Rp. 100.000 \n6. Back")
                 paxis = int(input("Input Your Choice: "))
                 while True:
                     if paxis == 1:
@@ -428,9 +440,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= paxis5
                             print("Axis credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif paxis == 2:
@@ -439,9 +451,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= paxis10
                             print("Axis credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif paxis == 3:
@@ -450,9 +462,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= paxis20 
                             print("Axis credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif paxis == 4:
@@ -461,9 +473,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= paxis50
                             print("Axis credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif paxis == 5:
@@ -472,9 +484,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= paxis100
                             print("Axis credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif paxis == 6:
@@ -482,13 +494,13 @@ class online_payment(ATM):
                         self.menu_pulsa()
                         break
                     else :
-                        print("enter the correct input")
+                        print("Enter the correct input")
                         self.menu_pulsa()
                 break
             elif choise_pulsa == 5:
                 int(input("TRI \nEnter your mobile number: "))
                 print("Select the credit you want to buy: ")
-                print("1. $.5 \n2. $.10 \n3. $.20 \n4. $.50 \n5. $.100 \n6. Back")
+                print("1. Rp. 5.000 \n2. Rp. 10.000 \n3. Rp. 20.000 \n4. Rp. 50.000 \n5. Rp. 100.000 \n6. Back")
                 ptri = int(input("Input Your Choice: "))
                 while True:
                     if ptri == 1:
@@ -497,9 +509,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -=ptri5
                             print("Tri credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif ptri == 2:
@@ -508,9 +520,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= ptri10
                             print("Tri credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif ptri == 3:
@@ -519,9 +531,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] -= ptri20
                             print("Tri credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif ptri == 4:
@@ -530,9 +542,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] - ptri50
                             print("Tri credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif ptri == 5:
@@ -541,9 +553,9 @@ class online_payment(ATM):
                             self.class_list[self.temp[0]][2] - ptri100
                             print("Telkomsel credit purchases successful")
                             print("Your remaining balance is ",self.class_list[self.temp[0]][2])
-                            print("\nThank Your, Have A Nice Day :)")
+                            print("\nThank You, Have A Nice Day :)")
                         else : 
-                            print("the balance is not enough!\n")
+                            print("The balance is not enough!\n")
                             self.menu_pulsa()
                         break
                     elif ptri == 6:
@@ -551,7 +563,7 @@ class online_payment(ATM):
                         self.menu_pulsa()
                         break
                     else :
-                        print("enter the correct input")
+                        print("Enter the correct input")
                         self.menu_pulsa()
                 break
             elif choise_pulsa == 6:
@@ -567,7 +579,7 @@ class online_payment(ATM):
         self.token_listrik()
         int(input("Enter your Token number: "))
         print("Select the credit you want to buy: ")
-        print("1. $.20 \n2. $.50 \n3. $.100 \n4. $.150 \n5. $.200 \n6. Back")
+        print("1. Rp. 20.000 \n2. Rp. 50.000 \n3. Rp. 100.000 \n4. Rp. 150.000 \n5. Rp. 200.000 \n6. Back")
         token = int(input("Input Your Choice: "))
         while True:
             if token == 1:
@@ -576,10 +588,10 @@ class online_payment(ATM):
                     self.class_list[self.temp[0]][2] -= tokenlistrik20
                     print("Your electric token purchases successful")
                     print("Your remaining balance is ", self.class_list[self.temp[0]][2])
-                    print("\nThank Your, Have A Nice Day :)")
+                    print("\nThank You, Have A Nice Day :)")
                     break
                 else : 
-                    print("the balance is not enough!\n")
+                    print("The balance is not enough!\n")
                     self.summon_online_payment()
                     break
             elif token == 2:
@@ -588,10 +600,10 @@ class online_payment(ATM):
                     self.class_list[self.temp[0]][2] -= tokenlistrik50
                     print("Your electric token purchases successful")
                     print("Your remaining balance is ", self.class_list[self.temp[0]][2])
-                    print("\nThank Your, Have A Nice Day :)")
+                    print("\nThank You, Have A Nice Day :)")
                     break
                 else : 
-                    print("the balance is not enough!\n")
+                    print("The balance is not enough!\n")
                     self.menu_token_listrik()
                     break
             elif token == 3:
@@ -600,10 +612,10 @@ class online_payment(ATM):
                     self.class_list[self.temp[0]][2] -= tokenlistrik100
                     print("Your electric token purchases successful")
                     print("Your remaining balance is ", self.class_list[self.temp[0]][2])
-                    print("\nThank Your, Have A Nice Day :)")
+                    print("\nThank You, Have A Nice Day :)")
                     break
                 else : 
-                    print("the balance is not enough!\n")
+                    print("The balance is not enough!\n")
                     self.menu_token_listrik()
                     break
             elif token == 4:
@@ -612,10 +624,10 @@ class online_payment(ATM):
                     self.class_list[self.temp[0]][2] -= tokenlistrik150
                     print("Your electric token purchases successful")
                     print("Your remaining balance is ", self.class_list[self.temp[0]][2])
-                    print("\nThank Your, Have A Nice Day :)")
+                    print("\nThank You, Have A Nice Day :)")
                     break
                 else : 
-                    print("the balance is not enough!\n")
+                    print("The balance is not enough!\n")
                     self.menu_token_listrik()
                     break
             elif token == 5:
@@ -624,10 +636,10 @@ class online_payment(ATM):
                     self.class_list[self.temp[0]][2] -= tokenlistrik200
                     print("Your electric token purchases successful")
                     print("Your remaining balance is ", self.class_list[self.temp[0]][2])
-                    print("\nThank Your, Have A Nice Day :)")
+                    print("\nThank You, Have A Nice Day :)")
                     break
                 else : 
-                    print("the balance is not enough!\n")
+                    print("The balance is not enough!\n")
                     self.menu_token_listrik()
                     break
             elif token == 6:
@@ -636,12 +648,10 @@ class online_payment(ATM):
                     self.summon_online_payment()
                     break
             else :
-                print("enter the correct input")
+                print("Enter the correct input")
                 self.menu_token_listrik()
                 break
-            
-        
-    
+               
     def summon_online_payment(self):
         self.menu_online_payment()
         choice_online_payment = int(input("Input Your Choice : "))
@@ -658,11 +668,9 @@ class online_payment(ATM):
             elif choice_online_payment == 4 :
                 self.menuATM()
             else:
-                print("enter the correct input")
+                print("Enter the correct input")
                 self.summon_online_payment()
                 break
-
-
 
 class send_money(Account):   
     def __init__(self):
@@ -703,8 +711,6 @@ class send_money(Account):
                 print("Your balance is not enough!!")
                 break
         
-        
-        
     def summon_send_money(self):
         choice_send_money = int(input("Input Your Choice : "))
         while True:
@@ -725,10 +731,10 @@ class send_money(Account):
                     self.menu_send_money()
                     break
             elif choice_send_money == 3 :
-                print("Thank Your, Have A Nice Day :)")
+                print("Thank You, Have A Nice Day :)")
                 break
             else:
-                print("enter the correct input")
+                print("Enter the correct input")
                 self.summon_send_money()
                 break
 
